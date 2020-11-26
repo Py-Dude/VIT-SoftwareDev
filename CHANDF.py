@@ -136,7 +136,7 @@ def pawn2():
         player2move()
 
 def hero3a(x):
-    if(x in "FLRB"):      ￼
+    if(x in "FLRB"):
         if(x=="F"):
             temp=d1[s[0]]
             if(temp[1]>0 and temp[1]<=4):
