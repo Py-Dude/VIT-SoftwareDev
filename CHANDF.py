@@ -20,7 +20,7 @@ def player1move():
                     print("Invalid Move")
                     player1move()
 
-            if(s[1]=="B"):
+            elif(s[1]=="B"):
                 temp=d1[s[0]]
                 if(temp[1]>=0 and temp[1]<4):
                     op=checkkill(temp,s[1])
@@ -35,7 +35,7 @@ def player1move():
                     print("Invalid Move")
                     player1move()
 
-            if(s[1]=="L"):
+            elif(s[1]=="L"):
                 temp=d1[s[0]]
                 if(temp[0]>0 and temp[0]<=4):
                     op=checkkill(temp,s[1])
@@ -50,7 +50,7 @@ def player1move():
                     print("Invalid Move")
                     player1move()
 
-            if(s[1]=="R"):
+            elif(s[1]=="R"):
                 temp=d1[s[0]]
                 if(temp[0]>=0 and temp[0]<4):
                     op=checkkill(temp,s[1])
@@ -64,6 +64,9 @@ def player1move():
                 else:
                     print("Invalid Move")
                     player1move()
+            else:
+                print("Invalid Move")
+                player2move()
         else:
             print("Invalid Move")
             player1move()
@@ -92,7 +95,7 @@ def player2move():
                     print("Invalid Move")
                     player2move()
 
-            if(s[1]=="F"):
+            elif(s[1]=="F"):
                 temp=d1[s[0]]
                 if(temp[1]>=0 and temp[1]<4):
                     op=checkkill(temp,s[1])
@@ -107,7 +110,7 @@ def player2move():
                     print("Invalid Move")
                     player2move()
 
-            if(s[1]=="R"):
+            elif(s[1]=="R"):
                 temp=d1[s[0]]
                 if(temp[0]>0 and temp[0]<=4):
                     op=checkkill(temp,s[1])
@@ -122,7 +125,7 @@ def player2move():
                     print("Invalid Move")
                     player2move()
 
-            if(s[1]=="L"):
+            elif(s[1]=="L"):
                 temp=d1[s[0]]
                 if(temp[0]>=0 and temp[0]<4):
                     op=checkkill(temp,s[1])
@@ -136,6 +139,11 @@ def player2move():
                 else:
                     print("Invalid Move")
                     player2move()
+
+            else:
+                print("Invalid Move")
+                player2move()
+                    
         else:
             print("Invalid Move")
             player2move()
@@ -146,7 +154,7 @@ def player2move():
 def checkinput(a):#Checking Input
     q=0
     for j in a:
-        if(j[0]=="P" and (j[1]=="1" or j[1]=="2" or j[1]=="3" or j[1]=="4" or j[1]=="5")):
+        if((j[0]=="P" and (j[1]=="1" or j[1]=="2" or j[1]=="3" or j[1]=="4" or j[1]=="5")) or (j[0]=="H" and (j[1]=="1" or j[1]=="2" or j[1]=="3"))):
             q=0    
         else:
             return(-1)
