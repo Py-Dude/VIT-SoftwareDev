@@ -1,3 +1,4 @@
+#Taking input and checking if input is not valid recalling the function
 def player1move():
     s=input().split(":")
     # Is that character alive
@@ -17,6 +18,7 @@ def player1move():
                     print(board)
                 else:
                     print("Invalid Move")
+                    player1move()
 
             if(s[1]=="B"):
                 temp=d1[s[0]]
@@ -31,6 +33,7 @@ def player1move():
                     print(board)
                 else:
                     print("Invalid Move")
+                    player1move()
 
             if(s[1]=="L"):
                 temp=d1[s[0]]
@@ -45,6 +48,7 @@ def player1move():
                     print(board)
                 else:
                     print("Invalid Move")
+                    player1move()
 
             if(s[1]=="R"):
                 temp=d1[s[0]]
@@ -59,10 +63,13 @@ def player1move():
                     print(board)
                 else:
                     print("Invalid Move")
+                    player1move()
         else:
             print("Invalid Move")
+            player1move()
     else:
         print("Invalid Move")
+        player1move()
 
 def player2move():
     s=input().split(":")
@@ -83,6 +90,7 @@ def player2move():
                     print(board)
                 else:
                     print("Invalid Move")
+                    player2move()
 
             if(s[1]=="F"):
                 temp=d1[s[0]]
@@ -97,6 +105,7 @@ def player2move():
                     print(board)
                 else:
                     print("Invalid Move")
+                    player2move()
 
             if(s[1]=="R"):
                 temp=d1[s[0]]
@@ -111,6 +120,7 @@ def player2move():
                     print(board)
                 else:
                     print("Invalid Move")
+                    player2move()
 
             if(s[1]=="L"):
                 temp=d1[s[0]]
@@ -125,12 +135,15 @@ def player2move():
                     print(board)
                 else:
                     print("Invalid Move")
+                    player2move()
         else:
             print("Invalid Move")
+            player2move()
     else:
         print("Invalid Move")
+        player2move()
 
-def checkinput(a):
+def checkinput(a):#Checking Input
     for j in a:
         if(j[0]=="P" and (j[1]=="1" or j[1]=="2" or j[1]=="3" or j[1]=="4" or j[1]=="5")):
             1=1
@@ -138,7 +151,7 @@ def checkinput(a):
             return(-1)
     return(0)
 
-def checkkill(temp,q):
+def checkkill(temp,q):#Check if any character is killed or not
     for i in d2:
         if(q=="F"):
             if(d2[i][0]==temp[0] and d2[i][1]==temp[1]-1):
@@ -195,5 +208,4 @@ while(True):
         player2move(1)
     if(winner()==0):
         break
-
         
