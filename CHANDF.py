@@ -136,7 +136,7 @@ def pawn2():
         player2move()
 
 def hero3a(x):
-    if(x in "FLRB"):        
+    if(x in "FLRB"):        player1move(1)      ￼
         if(x=="F"):
             temp=d1[s[0]]
             if(temp[1]>0 and temp[1]<=4):
@@ -276,6 +276,7 @@ def hero3b(x):
 
 def player1move():
     s=input().split(":")
+    k=1
     # Is that character alive
     if s[0] in d1:
         if(s[0][0]=='P'):
@@ -369,7 +370,9 @@ k=0 #which player is moving 0-A || 1-B
 while(True):
     if(k==0):
         player1move()
+        k=1
     else:
         player2move()
+        k=0
     if(winner()==0):
         break
