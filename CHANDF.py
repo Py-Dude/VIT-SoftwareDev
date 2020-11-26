@@ -144,9 +144,10 @@ def player2move():
         player2move()
 
 def checkinput(a):#Checking Input
+    q=0
     for j in a:
         if(j[0]=="P" and (j[1]=="1" or j[1]=="2" or j[1]=="3" or j[1]=="4" or j[1]=="5")):
-            1=1
+            q=0    
         else:
             return(-1)
     return(0)
@@ -183,7 +184,7 @@ board=[["-" for k in range(0,5)]for j in range(0,5)]
 #Positions of board at any time
 
 a=input().split(",")
-while(if(checkinput(a)==-1)):
+while(checkinput(a)==-1):
     print("Invalid input format")
     a=list(map(input().split()))
 for j in range(0,5):
@@ -192,7 +193,7 @@ for j in range(0,5):
 print(board)
 
 b=input().split(",")
-while(if(checkinput(b)==-1)):
+while(checkinput(b)==-1):
     print("Invalid input format")
     b=list(map(input().split()))
 for j in range(0,5):
@@ -208,4 +209,5 @@ while(True):
         player2move(1)
     if(winner()==0):
         break
+
         
