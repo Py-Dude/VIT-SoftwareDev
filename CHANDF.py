@@ -368,8 +368,8 @@ print(board)
 k=0 #which player is moving 0-A || 1-B
 while(True):
     if(k==0):
-        player1move(1)
+        player1move()
     else:
-        player2move(1)
+        player2move()
     if(winner()==0):
         break
