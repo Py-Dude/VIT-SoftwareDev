@@ -1,75 +1,291 @@
+def pawn1():
+    if(s[1] in "FLRB"):        
+        if(s[1]=="F"):
+            temp=d1[s[0]]
+            if(temp[1]>0 and temp[1]<=4):
+                op=checkkill(temp,s[1])
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0],temp[1]-1]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player1move()
+
+        elif(s[1]=="B"):
+            temp=d1[s[0]]
+            if(temp[1]>=0 and temp[1]<4):
+                op=checkkill(temp,s[1])
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0],temp[1]+1]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player1move()
+
+        elif(s[1]=="L"):
+            temp=d1[s[0]]
+            if(temp[0]>0 and temp[0]<=4):
+                op=checkkill(temp,s[1])
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0]-1,temp[1]]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player1move()
+
+        elif(s[1]=="R"):
+            temp=d1[s[0]]
+            if(temp[0]>=0 and temp[0]<4):
+                op=checkkill(temp,s[1])
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0]+1,temp[1]]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player1move()
+        else:
+            print("Invalid Move")
+            player1move()
+    else:
+        print("Invalid Move")
+        player1move()
+def pawn2():
+    if(s[1] in "FLRB"):    
+        if(s[1]=="B"):
+            temp=d1[s[0]]
+            if(temp[1]>0 and temp[1]<=4):
+                op=checkkill(temp,s[1])
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0],temp[1]-1]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player2move()
+
+        elif(s[1]=="F"):
+            temp=d1[s[0]]
+            if(temp[1]>=0 and temp[1]<4):
+                op=checkkill(temp,s[1])
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0],temp[1]+1]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player2move()
+
+        elif(s[1]=="R"):
+            temp=d1[s[0]]
+            if(temp[0]>0 and temp[0]<=4):
+                op=checkkill(temp,s[1])
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0]-1,temp[1]]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player2move()
+
+        elif(s[1]=="L"):
+            temp=d1[s[0]]
+            if(temp[0]>=0 and temp[0]<4):
+                op=checkkill(temp,s[1])
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0]+1,temp[1]]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player2move()
+
+        else:
+            print("Invalid Move")
+            player2move()
+                
+    else:
+        print("Invalid Move")
+        player2move()
+
+def hero3a(x):
+    if(x in "FLRB"):        
+        if(x=="F"):
+            temp=d1[s[0]]
+            if(temp[1]>0 and temp[1]<=4):
+                op=checkkill(temp,x)
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0],temp[1]-1]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player1move()
+
+        elif(x=="B"):
+            temp=d1[s[0]]
+            if(temp[1]>=0 and temp[1]<4):
+                op=checkkill(temp,x)
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0],temp[1]+1]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player1move()
+
+        elif(x=="L"):
+            temp=d1[s[0]]
+            if(temp[0]>0 and temp[0]<=4):
+                op=checkkill(temp,x)
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0]-1,temp[1]]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player1move()
+
+        elif(x=="R"):
+            temp=d1[s[0]]
+            if(temp[0]>=0 and temp[0]<4):
+                op=checkkill(temp,x)
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0]+1,temp[1]]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player1move()
+        else:
+            print("Invalid Move")
+            player1move()
+    else:
+        print("Invalid Move")
+        player1move()
+
+def hero3b(x):
+    if(x in "FLRB"):    
+        if(x=="B"):
+            temp=d1[s[0]]
+            if(temp[1]>0 and temp[1]<=4):
+                op=checkkill(temp,x)
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0],temp[1]-1]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player2move()
+
+        elif(x=="F"):
+            temp=d1[s[0]]
+            if(temp[1]>=0 and temp[1]<4):
+                op=checkkill(temp,x)
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0],temp[1]+1]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player2move()
+
+        elif(x=="R"):
+            temp=d1[s[0]]
+            if(temp[0]>0 and temp[0]<=4):
+                op=checkkill(temp,x)
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0]-1,temp[1]]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player2move()
+
+        elif(x=="L"):
+            temp=d1[s[0]]
+            if(temp[0]>=0 and temp[0]<4):
+                op=checkkill(temp,x)
+                if(op!=-1):
+                    d1[s[0]]=d2[op]
+                    del(d2[op])
+                else:
+                    d1[s[0]]=[temp[0]+1,temp[1]]
+                board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
+                print(board)
+            else:
+                print("Invalid Move")
+                player2move()
+
+        else:
+            print("Invalid Move")
+            player2move()
+                
+    else:
+        print("Invalid Move")
+        player2move()
 #Taking input and checking if input is not valid recalling the function
+
 def player1move():
     s=input().split(":")
     # Is that character alive
     if s[0] in d1:
-        if(s[1] in "FLRB"):
-            
-            if(s[1]=="F"):
-                temp=d1[s[0]]
-                if(temp[1]>0 and temp[1]<=4):
-                    op=checkkill(temp,s[1])
-                    if(op!=-1):
-                        d1[s[0]]=d2[op]
-                        del(d2[op])
-                    else:
-                        d1[s[0]]=[temp[0],temp[1]-1]
-                    board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
-                    print(board)
-                else:
-                    print("Invalid Move")
-                    player1move()
-
-            elif(s[1]=="B"):
-                temp=d1[s[0]]
-                if(temp[1]>=0 and temp[1]<4):
-                    op=checkkill(temp,s[1])
-                    if(op!=-1):
-                        d1[s[0]]=d2[op]
-                        del(d2[op])
-                    else:
-                        d1[s[0]]=[temp[0],temp[1]+1]
-                    board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
-                    print(board)
-                else:
-                    print("Invalid Move")
-                    player1move()
-
-            elif(s[1]=="L"):
-                temp=d1[s[0]]
-                if(temp[0]>0 and temp[0]<=4):
-                    op=checkkill(temp,s[1])
-                    if(op!=-1):
-                        d1[s[0]]=d2[op]
-                        del(d2[op])
-                    else:
-                        d1[s[0]]=[temp[0]-1,temp[1]]
-                    board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
-                    print(board)
-                else:
-                    print("Invalid Move")
-                    player1move()
-
-            elif(s[1]=="R"):
-                temp=d1[s[0]]
-                if(temp[0]>=0 and temp[0]<4):
-                    op=checkkill(temp,s[1])
-                    if(op!=-1):
-                        d1[s[0]]=d2[op]
-                        del(d2[op])
-                    else:
-                        d1[s[0]]=[temp[0]+1,temp[1]]
-                    board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
-                    print(board)
-                else:
-                    print("Invalid Move")
-                    player1move()
-            else:
-                print("Invalid Move")
-                player2move()
-        else:
-            print("Invalid Move")
-            player1move()
+        if(s[0][0]=='P'):
+            pawn1()
+        elif(s[0][1]=='1'):
+            pawn1()
+            pawn1()
+        elif(s[0][1]=='2'):
+            hero3a(s[1][0])
+            hero3a(s[1][1])      
     else:
         print("Invalid Move")
         player1move()
@@ -78,75 +294,15 @@ def player2move():
     s=input().split(":")
     # Is that character alive
     if s[0] in d1:
-        if(s[1] in "FLRB"):
-            
-            if(s[1]=="B"):
-                temp=d1[s[0]]
-                if(temp[1]>0 and temp[1]<=4):
-                    op=checkkill(temp,s[1])
-                    if(op!=-1):
-                        d1[s[0]]=d2[op]
-                        del(d2[op])
-                    else:
-                        d1[s[0]]=[temp[0],temp[1]-1]
-                    board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
-                    print(board)
-                else:
-                    print("Invalid Move")
-                    player2move()
+        if(s[0][0]=='P'):
+            pawn2()
+        elif(s[0][1]=='1'):
+            pawn2()
+            pawn2()
+        elif(s[0][1]=='2'):
+            hero3b(s[1][0])
+            hero3b(s[1][1])  
 
-            elif(s[1]=="F"):
-                temp=d1[s[0]]
-                if(temp[1]>=0 and temp[1]<4):
-                    op=checkkill(temp,s[1])
-                    if(op!=-1):
-                        d1[s[0]]=d2[op]
-                        del(d2[op])
-                    else:
-                        d1[s[0]]=[temp[0],temp[1]+1]
-                    board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
-                    print(board)
-                else:
-                    print("Invalid Move")
-                    player2move()
-
-            elif(s[1]=="R"):
-                temp=d1[s[0]]
-                if(temp[0]>0 and temp[0]<=4):
-                    op=checkkill(temp,s[1])
-                    if(op!=-1):
-                        d1[s[0]]=d2[op]
-                        del(d2[op])
-                    else:
-                        d1[s[0]]=[temp[0]-1,temp[1]]
-                    board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
-                    print(board)
-                else:
-                    print("Invalid Move")
-                    player2move()
-
-            elif(s[1]=="L"):
-                temp=d1[s[0]]
-                if(temp[0]>=0 and temp[0]<4):
-                    op=checkkill(temp,s[1])
-                    if(op!=-1):
-                        d1[s[0]]=d2[op]
-                        del(d2[op])
-                    else:
-                        d1[s[0]]=[temp[0]+1,temp[1]]
-                    board[temp[0]][temp[1]],board[d1[s[0]][0]][d1[s[0]][1]]=board[d1[s[0]][0]][d1[s[0]][1]],board[temp[0]][temp[1]]
-                    print(board)
-                else:
-                    print("Invalid Move")
-                    player2move()
-
-            else:
-                print("Invalid Move")
-                player2move()
-                    
-        else:
-            print("Invalid Move")
-            player2move()
     else:
         print("Invalid Move")
         player2move()
@@ -194,7 +350,7 @@ board=[["-" for k in range(0,5)]for j in range(0,5)]
 a=input().split(",")
 while(checkinput(a)==-1):
     print("Invalid input format")
-    a=list(map(input().split()))
+    a=input().split()
 for j in range(0,5):
     d1[a[j]]=[4,j]
     board[4][j]="A-"+a[j]
@@ -203,7 +359,7 @@ print(board)
 b=input().split(",")
 while(checkinput(b)==-1):
     print("Invalid input format")
-    b=list(map(input().split()))
+    b=input().split()
 for j in range(0,5):
     d2[b[j]]=[0,j]
     board[0][j]="B-"+b[j]
@@ -217,5 +373,3 @@ while(True):
         player2move(1)
     if(winner()==0):
         break
-
-        
