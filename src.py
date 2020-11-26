@@ -351,7 +351,7 @@ board=[["-" for k in range(0,5)]for j in range(0,5)]
 a=input().split(",")
 while(checkinput(a)==-1):
     print("Invalid input format")
-    a=input().split()
+    a=input().split(",")
 for j in range(0,5):
     d1[a[j]]=[4,j]
     board[4][j]="A-"+a[j]
@@ -360,7 +360,7 @@ print(board)
 b=input().split(",")
 while(checkinput(b)==-1):
     print("Invalid input format")
-    b=input().split()
+    b=input().split(",")
 for j in range(0,5):
     d2[b[j]]=[0,j]
     board[0][j]="B-"+b[j]
